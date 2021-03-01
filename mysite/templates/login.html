@@ -4,11 +4,19 @@
 {% block navbar %}{% endblock navbar %}
 {% block content %}
 <div class="col-lg-4 mx-auto">
-    <h2>Login</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button type="submit" class="btn btn-primary mt-4">Login</button>
-    </form>
+    <div class="card">
+        <h2 class="card-header">Login</h2>
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}">
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-primary mt-4 col-12">Login</button>
+            </form>
+        </div>
+        <div class="card-footer text-center">
+            Não possui uma conta? <a href="{% url 'signup' %}" class='card-link text-decoration-none'>Cadastrar</a>
+        </div>
+    </div>
 </div>
 {% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Detalhes do Livro{% endblock title %}
+{% block content %}
+<div class="col-lg-6">
+    <div class="card">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="" alt="">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ livro.nome }}</h5>
+                    <hr>
+                    <p class="card-text"><span class="fw-bold">Autor: </span>{{ livro.autor }}</p>
+                    <p class="card-text"><span class="fw-bold">Cópias: </span>{{ livro.copias }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
